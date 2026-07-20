@@ -1,0 +1,1 @@
+const formCadastro = document.querySelector('#') as HTMLFormElement
