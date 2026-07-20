@@ -4,44 +4,39 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>APEX SPORT</title>
+  <link rel="stylesheet" href="/css/login.css">
 
-  <link rel="stylesheet" href="../css/style_estrutura.css">
-  <link rel="stylesheet" href="../css/style_login.css">
+  <title>Login Clientes</title>
+
 </head>
 
 <body>
   <main id="geral">
-    <header id="cabecalho">
-      Login
-      </div>
-
+    <header id="cabecalho"> 
+        <h2>Login</h2>
     </header>
 
     <section id="login">
 
-      <div id="login-box">
+   
 
-        <h2>Entrar</h2>
+      <form id="form-login">
 
-        <form id="form-login">
+        <label for="email">E-mail</label>
+        <input type="email" id="email" placeholder="Digite seu e-mail">
 
-          <label for="email">E-mail</label>
-          <input type="email" id="email" placeholder="Digite seu e-mail">
+        <label for="senha">Senha</label>
+        <input type="password" id="senha" placeholder="Digite sua senha" required>
 
-          <label for="senha">Senha</label>
-          <input type="password" id="senha" placeholder="Digite sua senha" re>
+        <button type="submit">Entrar</button>
 
-          <button type="submit">Entrar</button>
+      </form>
 
-          <div class="links-login">
-            <a href="cadastro.html">Criar conta</a>
-            <a href="#">Esqueci minha senha</a>
-          </div>
-
-        </form>
-
+      <div id="links">
+        <a href="cadastro.html">Nao possuo Cadastro.</a>
       </div>
+
+
 
     </section>
   </main>

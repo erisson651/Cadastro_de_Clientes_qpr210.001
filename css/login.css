@@ -1,0 +1,76 @@
+#geral{
+    width: 400px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,.2);
+justify-content: center;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+#cabecalho{
+    background-color: rgb(109, 135, 170);
+    color: white;
+    text-align: center;
+    text-transform: uppercase;
+    padding: 20px;
+    border-radius: 6px;
+}
+
+#login{
+    padding: 30px;
+}
+
+#form-login label{
+    display: block;
+    margin-bottom: 9px;
+    font-weight: bold;
+}
+
+#form-login input{
+    width: 90%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1em;
+}
+
+#form-login input{
+    border-color: rgb(109,135,170);
+    box-shadow: 0 0 5px rgba(109,135,170,.5);
+}
+
+#form-login button{
+    width: 100%;
+    padding: 12px;
+    background: rgb(109,135,170);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+#form-login button:hover{
+    background: rgb(80,110,150);
+}
+
+#links{
+    margin-top: 20px;
+    text-align: center;
+}
+
+#links a{
+    color: rgb(109,135,170);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#links a:hover{
+    text-decoration: underline;
+}
