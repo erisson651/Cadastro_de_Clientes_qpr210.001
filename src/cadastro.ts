@@ -1,71 +1,77 @@
-const formCadastro = document.querySelector('#form-row') as HTMLFormElement
-const nomeInput = document.querySelector('#nome') as HTMLInputElement
-const cpfInput = document.querySelector('#cpf') as HTMLInputElement
-const dataNascimentoInput = document.querySelector('#data-nascimento') as HTMLInputElement
-const emailInput = document.querySelector('#email') as HTMLInputElement
-const telefoneInput = document.querySelector('#telefone') as HTMLInputElement
-const ruaInput = document.querySelector('#rua') as HTMLInputElement
-const numeroInput = document.querySelector('#numero') as HTMLInputElement
-const bairroInput = document.querySelector('#bairro') as HTMLInputElement
-const cepInput = document.querySelector('#cep') as HTMLInputElement
-const btnCadastrar = document.querySelector('#btn-cadastrar') as HTMLButtonElement
-const resultCadastro = document.querySelector('#resultado-cadastro') as HTMLDivElement
+// Mapeamento dos elementos do HTML com os IDs corretos
+const formCadastro = document.querySelector('#client-form') as HTMLFormElement;
+const nomeInput = document.querySelector('#nome') as HTMLInputElement;
+const cpfInput = document.querySelector('#cpf') as HTMLInputElement;
+const emailInput = document.querySelector('#email') as HTMLInputElement;
+const ruaInput = document.querySelector('#rua') as HTMLInputElement;
+const bairroInput = document.querySelector('#bairro') as HTMLInputElement;
+const cepInput = document.querySelector('#cep') as HTMLInputElement;
+const resultCadastro = document.querySelector('#resultado-cadastro') as HTMLDivElement;
 
-// MECANISMO DE CADASTRO
-
+//  Classe Cliente
 class Cliente {
     nome: string;
     cpf: string;
-    dataNascimento: string;
     email: string;
-    telefone: string;
     rua: string;
-    numero: string
     bairro: string;
     cep: string;
 
-    constructor(nome: string, cpf: string, dataNascimento: string, email: string, telefone: string, rua: string, numero: string, bairro: string, cep: string,) {
+    constructor(nome: string, cpf: string, email: string, rua: string, bairro: string, cep: string) {
         this.nome = nome;
         this.cpf = cpf;
-        this.dataNascimento = dataNascimento;
         this.email = email;
-        this.telefone = telefone;
         this.rua = rua;
-        this.numero = numero;
         this.bairro = bairro;
-         this.cep = cep; 
-        }
+        this.cep = cep; 
+    }
 }
 
-formCadastro.addEventListener('submit', (event: Event) => {
-    event.preventDefault()
+// Array para armazenar os clientes em memória
+const listaClientes: Cliente[] = [];
 
+// Função para renderizar/listar os clientes na tela
+function renderizarLista(): void {
+    // Limpa a área antes de desenhar a lista atualizada
+    resultCadastro.innerHTML = '';
+
+    listaClientes.forEach((cliente, index) => {
+        // Cria um card visual aproveitando o estilo do seu CSS (.card)
+        const cardHtml = `
+            <div class="card" style="margin-bottom: 1rem;">
+                <h3 style="margin-bottom: 0.5rem; color: var(--primary-color);">Cliente #${index + 1}: ${cliente.nome}</h3>
+                <p><strong>CPF:</strong> ${cliente.cpf}</p>
+                <p><strong>Email:</strong> ${cliente.email}</p>
+                <p><strong>Rua:</strong> ${cliente.rua}</p>
+                <p><strong>Bairro:</strong> ${cliente.bairro || 'Não informado'}</p>
+                <p><strong>CEP:</strong> ${cliente.cep}</p>
+            </div>
+        `;
+        resultCadastro.innerHTML += cardHtml;
+    });
+}
+
+//  Evento do Formulário
+formCadastro.addEventListener('submit', (event: Event) => {
+    event.preventDefault(); // Impede a página de recarregar
+
+    // Cria o novo cliente com os dados digitados
     const novoCliente = new Cliente(
         nomeInput.value,
         cpfInput.value,
-        dataNascimentoInput.value,
         emailInput.value,
-        telefoneInput.value,
         ruaInput.value,
-        numeroInput.value,
         bairroInput.value,
-        cepInput.value,
+        cepInput.value
     );
 
-    resultCadastro.innerHTML = `
-    <p><strong>Nome:</strong>${novoCliente.nome}<p>
-    <p><strong>Cpf:</strong>${novoCliente.cpf}<p>
-    <p><strong>Data de Nascimento:</strong>${novoCliente.dataNascimento}<p>
-    <p><strong>Email:</strong>${novoCliente.email}<p>
-    <p><strong>Telefone:</strong>${novoCliente.telefone}<p>
-    <p><strong>Rua:</strong>${novoCliente.rua}<p>
-    <p><strong>Número:</strong>${novoCliente.numero}<p>
-    <p><strong>Bairro:</strong>${novoCliente.bairro}<p>
-    <p><strong>Cep:</strong>${novoCliente.cep}<p>
-    `
-    formCadastro.reset()
-})
+    // Adiciona ao array
+    listaClientes.push(novoCliente);
 
+    // Atualiza a exibição na tela
+    renderizarLista();
 
-
+    // Limpa o formulário para o próximo cadastro
+    formCadastro.reset();
+});
 
