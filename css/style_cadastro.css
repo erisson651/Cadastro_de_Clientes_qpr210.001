@@ -224,4 +224,18 @@
       width: 100%;
     }
   }
-  
+
+  #cadastro-cliente{
+color:#5e82b8;
+border-radius: 8px;
+width: 60%;
+justify-content: center;
+padding: 40px;
+margin: 20px;
+  }
+.cabecario{
+background-color:#000000;
+  }
+#div-cadastro{
+  background-color: #52627a;
+}

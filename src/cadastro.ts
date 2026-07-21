@@ -55,7 +55,7 @@ formCadastro.addEventListener('submit', (event: Event) => {
     );
 
     resultCadastro.innerHTML += `
-    <form id="cadastro-cliente"><h2>CADASTRO DE ${novoCliente.nome}<h2>
+    <form id="cadastro-cliente"><h2 class='cabecairo'>CADASTRO DE ${novoCliente.nome}<h2>
 
     <div id="div-cadastro">
         <p><strong>Nome:</strong> ${novoCliente.nome}</p>
