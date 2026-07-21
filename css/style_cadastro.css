@@ -194,34 +194,76 @@
     color: var(--secondary-hover);
   }
   
-  
-  #resultado-cadastro {
-    margin-top: 1.5rem;
+  .lista {
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    margin-top: 1rem;
   }
-  
-  
+
+  .lista:empty::before {
+    content: "Nenhum cliente cadastrado até o momento.";
+    display: block;
+    text-align: center;
+    color: var(--text-muted);
+    font-style: italic;
+    padding: 1.5rem 0;
+  }
+
+  .cliente-item {
+    background-color: var(--bg-color);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    padding: 1.25rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    transition: var(--transition);
+  }
+
+  .cliente-item:hover {
+    border-color: #cbd5e1;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .cliente-info h3 {
+    font-size: 1.1rem;
+    color: var(--primary-color);
+    margin-bottom: 0.3rem;
+  }
+
+  .cliente-info p {
+    font-size: 0.9rem;
+    color: var(--text-main);
+    margin-bottom: 0.2rem;
+  }
+
   @media (max-width: 640px) {
     body {
       padding: 1rem 0.5rem;
     }
-  
+
     .card {
       padding: 1.25rem;
     }
-  
+
     .form-row {
       gap: 1rem;
     }
-  
+
     .button-group {
       flex-direction: column;
     }
-  
+
     .bnt {
       width: 100%;
+    }
+    
+    .cliente-item {
+      flex-direction: column;
+      align-items: flex-start;
     }
   }
   
