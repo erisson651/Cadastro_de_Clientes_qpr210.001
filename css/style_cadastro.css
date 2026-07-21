@@ -1,0 +1,227 @@
+:root {
+    --primary-color: #4f46e5;       
+    --primary-hover: #4338ca;
+    --secondary-color: #64748b;    
+    --secondary-hover: #475569;
+    --bg-color: #f8fafc;           
+    --card-bg: #ffffff;
+    --text-main: #1e293b;
+    --text-muted: #64748b;
+    --border-color: #e2e8f0;
+    --focus-ring: rgba(79, 70, 229, 0.2);
+    
+    --radius-sm: 6px;
+    --radius-md: 10px;
+    --radius-lg: 16px;
+    
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.05);
+    --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+    --shadow-lg: 0 10px 25px -5px rgba(0,0,0,0.1);
+    
+    --transition: all 0.2s ease-in-out;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  }
+  
+  body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    line-height: 1.5;
+    padding: 2rem 1rem;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  
+  
+  .container {
+    width: 100%;
+    max-width: 850px;
+    margin: 0 auto;
+  }
+  
+  
+  header {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  header h1 {
+    font-size: 1.85rem;
+    font-weight: 700;
+    color: var(--text-main);
+    margin-bottom: 0.3rem;
+    letter-spacing: -0.5px;
+  }
+  
+  header p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+  }
+  
+  
+  .card {
+    background-color: var(--card-bg);
+    padding: 2rem;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--border-color);
+    margin-bottom: 2rem;
+  }
+  
+  .card h2 {
+    font-size: 1.35rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: var(--text-main);
+    border-bottom: 2px solid var(--bg-color);
+    padding-bottom: 0.75rem;
+  }
+  
+ 
+  .form-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 100%; 
+  }
+  
+  
+  .flex-1 {
+    flex: 1 1 200px;
+  }
+  
+  .flex-2 {
+    flex: 2 1 320px;
+  }
+  
+
+  .form-group label {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--text-main);
+    margin-bottom: 0.4rem;
+  }
+  
+  .form-group input[type="text"],
+  .form-group input[type="email"] {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    font-size: 0.95rem;
+    color: var(--text-main);
+    background-color: #fafafa;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-sm);
+    outline: none;
+    transition: var(--transition);
+  }
+  
+  .form-group input:hover {
+    background-color: #ffffff;
+    border-color: #cbd5e1;
+  }
+  
+  .form-group input:focus {
+    background-color: #ffffff;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 4px var(--focus-ring);
+  }
+  
+  .form-group input::placeholder {
+    color: #94a3b8;
+  }
+  
+  
+  .button-group {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border-color);
+  }
+  
+  
+  .bnt {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    border: none;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: var(--transition);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .bnt-primary {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    box-shadow: var(--shadow-sm);
+  }
+  
+  .bnt-primary:hover {
+    background-color: var(--primary-hover);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-1px);
+  }
+  
+  .bnt-primary:active {
+    transform: translateY(0);
+  }
+  
+  .bnt-secondary {
+    background-color: #f1f5f9;
+    color: var(--secondary-color);
+    border: 1px solid var(--border-color);
+  }
+  
+  .bnt-secondary:hover {
+    background-color: #e2e8f0;
+    color: var(--secondary-hover);
+  }
+  
+  
+  #resultado-cadastro {
+    margin-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  
+  @media (max-width: 640px) {
+    body {
+      padding: 1rem 0.5rem;
+    }
+  
+    .card {
+      padding: 1.25rem;
+    }
+  
+    .form-row {
+      gap: 1rem;
+    }
+  
+    .button-group {
+      flex-direction: column;
+    }
+  
+    .bnt {
+      width: 100%;
+    }
+  }
+  
