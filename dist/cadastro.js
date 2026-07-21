@@ -1,43 +1,43 @@
 "use strict";
-const formCadastro = document.querySelector('#form-row');
+const formCadastro = document.querySelector('#client-form');
 const nomeInput = document.querySelector('#nome');
 const cpfInput = document.querySelector('#cpf');
-const dataNascimentoInput = document.querySelector('#data-nascimento');
 const emailInput = document.querySelector('#email');
-const telefoneInput = document.querySelector('#telefone');
-const ruaInput = document.querySelector('#rua');
-const numeroInput = document.querySelector('#numero');
-const bairroInput = document.querySelector('#bairro');
 const cepInput = document.querySelector('#cep');
-const btnCadastrar = document.querySelector('#btn-cadastrar');
+const cidadeInput = document.querySelector('#cidade');
+const estadoInput = document.querySelector('#estado');
+const ruaInput = document.querySelector('#rua');
+const bairroInput = document.querySelector('#bairro');
 const resultCadastro = document.querySelector('#resultado-cadastro');
-// MECANISMO DE CADASTRO
 class Cliente {
-    constructor(nome, cpf, dataNascimento, email, telefone, rua, numero, bairro, cep) {
+    constructor(nome, cpf, email, cep, cidade, estado, rua, bairro) {
         this.nome = nome;
         this.cpf = cpf;
-        this.dataNascimento = dataNascimento;
         this.email = email;
-        this.telefone = telefone;
-        this.rua = rua;
-        this.numero = numero;
-        this.bairro = bairro;
         this.cep = cep;
+        this.cidade = cidade;
+        this.estado = estado;
+        this.rua = rua;
+        this.bairro = bairro;
     }
 }
 formCadastro.addEventListener('submit', (event) => {
     event.preventDefault();
-    const novoCliente = new Cliente(nomeInput.value, cpfInput.value, dataNascimentoInput.value, emailInput.value, telefoneInput.value, ruaInput.value, numeroInput.value, bairroInput.value, cepInput.value);
-    resultCadastro.innerHTML = `
-    <p><strong>Nome:</strong>${novoCliente.nome}<p>
-    <p><strong>Cpf:</strong>${novoCliente.cpf}<p>
-    <p><strong>Data de Nascimento:</strong>${novoCliente.dataNascimento}<p>
-    <p><strong>Email:</strong>${novoCliente.email}<p>
-    <p><strong>Telefone:</strong>${novoCliente.telefone}<p>
-    <p><strong>Rua:</strong>${novoCliente.rua}<p>
-    <p><strong>Número:</strong>${novoCliente.numero}<p>
-    <p><strong>Bairro:</strong>${novoCliente.bairro}<p>
-    <p><strong>Cep:</strong>${novoCliente.cep}<p>
+    const novoCliente = new Cliente(nomeInput.value, cpfInput.value, emailInput.value, cepInput.value, cidadeInput.value, estadoInput.value, ruaInput.value, bairroInput.value);
+    resultCadastro.innerHTML += `
+    <form id="cadastro-cliente"><h2>CADASTRO DE ${novoCliente.nome}<h2>
+
+    <div id="div-cadastro">
+        <p><strong>Nome:</strong> ${novoCliente.nome}</p>
+        <p><strong>CPF:</strong> ${novoCliente.cpf}</p>
+        <p><strong>Email:</strong> ${novoCliente.email}</p>
+        <p><strong>CEP:</strong> ${novoCliente.cep}</p>
+        <p><strong>Cidade:</strong> ${novoCliente.cidade}</p>
+        <p><strong>Estado:</strong> ${novoCliente.estado}</p>
+        <p><strong>Rua:</strong> ${novoCliente.rua}</p>
+        <p><strong>Bairro:</strong> ${novoCliente.bairro}</p>
+        </div>
+        </form>
     `;
     formCadastro.reset();
 });
