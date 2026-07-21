@@ -9,6 +9,7 @@ const numeroInput = document.querySelector('#numero') as HTMLInputElement
 const bairroInput = document.querySelector('#bairro') as HTMLInputElement
 const cepInput = document.querySelector('#cep') as HTMLInputElement
 const btnCadastrar = document.querySelector('#btn-cadastrar') as HTMLButtonElement
+const resultCadastro = document.querySelector('#resultado-cadastro') as HTMLDivElement
 
 // MECANISMO DE CADASTRO
 
@@ -36,7 +37,7 @@ class Cliente {
         }
 }
 
-btnCadastrar.addEventListener('submit', (event: Event) => {
+formCadastro.addEventListener('submit', (event: Event) => {
     event.preventDefault()
 
     const novoCliente = new Cliente(
@@ -51,5 +52,20 @@ btnCadastrar.addEventListener('submit', (event: Event) => {
         cepInput.value,
     );
 
-    
+    resultCadastro.innerHTML = `
+    <p><strong>Nome:</strong>${novoCliente.nome}<p>
+    <p><strong>Cpf:</strong>${novoCliente.cpf}<p>
+    <p><strong>Data de Nascimento:</strong>${novoCliente.dataNascimento}<p>
+    <p><strong>Email:</strong>${novoCliente.email}<p>
+    <p><strong>Telefone:</strong>${novoCliente.telefone}<p>
+    <p><strong>Rua:</strong>${novoCliente.rua}<p>
+    <p><strong>Número:</strong>${novoCliente.numero}<p>
+    <p><strong>Bairro:</strong>${novoCliente.bairro}<p>
+    <p><strong>Cep:</strong>${novoCliente.cep}<p>
+    `
+    formCadastro.reset()
 })
+
+
+
+
