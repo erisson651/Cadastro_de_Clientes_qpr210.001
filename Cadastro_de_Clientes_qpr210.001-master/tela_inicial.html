@@ -2,83 +2,67 @@
 <html lang="pt-BR">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cadastro De Clientes</title>
-
-  <link rel="stylesheet" href="./css/style_cadastro.css">
-  <script src="./dist/cadastro.js" defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minha Conta</title>
 </head>
 
 <body>
-  <div class="container">
+    <link rel="stylesheet" href="pagina_pós.css">
+
     <header>
-      <h1>Sistema De Gerenciamento De Clientes</h1>
-      <p>Aplicação Web Interativa para Controle e Cadastro</p>
+        <h1>Tela Inicial</h1>
+        <nav>
+            
+          
+        </nav>
+        <hr>
     </header>
 
-    <section class="card">
-      <h2 id="form-title">Cadastrar Novo Cliente</h2>
+    <main>
 
-      <form id="client-form">
-        <input type="hidden" id="client-id">
+        <section>
+            <h2>Bem-vindo(a)!</h2>
+            <p>Você concluiu o seu cadastro!.</p>
+        </section>
 
-        <div class="form-row">
-          <div class="form-group flex-2">
-            <label for="nome">Nome Completo</label>
-            <input type="text" id="nome" placeholder="Ex : Cristian de Hungria" required>
-          </div>
+        <hr>
 
-          <div class="form-group flex-1">
-            <label for="cpf">CPF</label>
-            <input type="text" id="cpf" placeholder="000.000.000-00" required>
-          </div>
+        <section>
+            <h2>Informações do Usuário</h2>
 
-          <div class="form-group flex-2">
-            <label for="email">Email</label>
-            <input type="email" id="email" placeholder="Ex : cristian@email.com" required>
-          </div>
+            <p><strong>Nome:</strong> João da Silva</p>
 
-          <div class="form-group">
-            <label for="cep">CEP</label>
-            <input type="text" id="cep" placeholder="Ex : 49155766" required>
-          </div>
+            <p><strong>E-mail:</strong> joao@email.com</p>
 
-          <div class="form-group">
-            <label for="cidade">Cidade</label>
-            <input type="text" id="cidade" placeholder="Ex : São Paulo" required>
-          </div>
+            <p><strong>Endereço:</strong> Rua Exemplo, Nº 100</p>
 
-          <div class="form-group">
-            <label for="estado">Estado</label>
-            <input type="text" id="estado" placeholder="Ex : SP">
-          </div>
+            <p><strong>Cidade:</strong> Estância - SE</p>
 
-          <div class="form-group">
-            <label for="rua">Rua</label>
-            <input type="text" id="rua" placeholder="Ex : laranjeira" required>
-          </div>
+            <p><strong>CEP:</strong> 49200-000</p>
+        </section>
 
-          <div class="form-group">
-            <label for="bairro">Bairro</label>
-            <input type="text" id="bairro" placeholder="Ex : Cajueiro" required>
-          </div>
-        </div>
+        <hr>
 
-        <div class="button-group">
-          <button type="submit" id="bnt-save" class="bnt bnt-primary">Salvar Cadastro</button>
-          <button type="button" id="bnt-cancel" class="bnt bnt-secondary" style="display: none;">Cancelar Cadastro</button>
-        </div>
-      </form>
-    </section>
+        <section>
 
-    <section class="card">
-      <h2>Clientes Cadastrados</h2>
-      <div id="resultado-cadastro" class="list"></div>
-    </section>
-  </div>
+            <h2>Minha Conta</h2>
 
-  <script src="./dist/script_cadastro.s" defer></script>
+            <button>Alterar Dados</button>
+
+        </section>
+
+    </main>
+
+    <hr>
+
+    <footer>
+
+        
+
+    </footer>
+
 </body>
 
 </html>
+   
